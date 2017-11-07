@@ -5,7 +5,7 @@ import {createStore} from 'redux'
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 
-// dispatch methods - bound to our component
+// dispatch actions - bound to our component
 export const increment = () => {
     return {
         type: INCREMENT
