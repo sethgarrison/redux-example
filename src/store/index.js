@@ -5,6 +5,10 @@ import {createStore} from 'redux'
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 
+const initState = {
+    count: 0
+}
+
 // dispatch actions - bound to our component
 export const increment = () => {
     return {
@@ -19,12 +23,12 @@ export const decrement = () => {
 }
 
 // our reducer which interacts with the state
-const reducer = (state = 0, action) => {
+const reducer = (state = initState, action) => {
     switch (action.type) {
         case INCREMENT:
-            return state + 1
+            return {...state, count: state.count + 1}
         case DECREMENT:
-            return state - 1
+            return {...state, count: state.count - 1}
         default:
             return state
     }

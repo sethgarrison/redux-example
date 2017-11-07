@@ -25,6 +25,6 @@ class Counter extends Component {
  * to bind the dispatch methods to the component's props.
  */
 export default connect(
-    (state) => ({count: state}),
+    (state) => ({count: state.count}),
     {increment, decrement}
 )(Counter)

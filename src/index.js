@@ -13,7 +13,7 @@ import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-    // By wrapping the app in the store, all components which use the `connect`
+    // By wrapping the app in the provider, all components which use the `connect`
     // have access to the store variable in their props
     <Provider store={store}>
         <App/>
