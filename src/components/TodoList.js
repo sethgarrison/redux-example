@@ -1,8 +1,12 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {fetchTodos} from '../store'
 import './todo-list.css'
 
 class TodoList extends Component {
+    componentDidMount() {
+        this.props.fetchTodos()
+    }
     render () {
         return (
             <div className="todo-list">
@@ -11,7 +15,6 @@ class TodoList extends Component {
                     {this.props.todos.map(todo =>
                         <li key={todo.id}>
                             <input type="checkbox" defaultChecked={todo.isComplete}/>
-                            <button>X</button>
                             <span>{todo.name}</span>
                         </li>
                     )}
@@ -22,5 +25,6 @@ class TodoList extends Component {
 }
 
 export default connect(
-    (state) => ({todos: state.todos})
+    (state) => ({todos: state.todos}),
+    {fetchTodos}
 )(TodoList)
