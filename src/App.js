@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import TodoList from './components/TodoList'
+import Message from './components/Message'
 import './App.css';
 
 /**
@@ -8,16 +9,17 @@ import './App.css';
  * but useful to keep around in case our app becomes more complex.
  */
 class App extends Component {
-  render () {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </div>
-        <TodoList/>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <div className="App-header">
+                    <img src={logo} className="App-logo" alt="logo"/>
+                </div>
+                <Message/>
+                <TodoList/>
+            </div>
+        );
+    }
 }
 
 export default App;

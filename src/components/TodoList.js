@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {fetchTodos} from '../store'
+import {fetchTodos} from '../store/todo'
 import './todo-list.css'
 
 class TodoList extends Component {
@@ -25,6 +25,8 @@ class TodoList extends Component {
 }
 
 export default connect(
-    (state) => ({todos: state.todos}),
+    (state) => ({
+        todos: state.todo.todos
+    }),
     {fetchTodos}
 )(TodoList)
