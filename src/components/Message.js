@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 const Message = ({message}) => (
     message
-        ? <span>{message}</span>
+        ? <span className="message">{message}</span>
         : null
 )
 

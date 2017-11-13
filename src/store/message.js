@@ -1,20 +1,29 @@
-import {GOT_TODOS} from './todo'
-const SHOW_MESSAGE = 'SHOW_MESSAGE'
+//IMPORT ACTION TYPES
+import {ADD_TODO, LOAD_TODOS, TODO_REPLACE, TODO_DELETE} from './todo'
 
-export const showMessage = (message) => ({
-    type: SHOW_MESSAGE,
-    payload: message
+//LOCAL ACTION TYPES
+const MESSAGE_SHOW = 'MESSAGE_SHOW'
+
+// LOCAL DISPATCH
+export const showMessage = (msg) => ({
+    type: MESSAGE_SHOW,
+    payload: msg
 })
 
-export const reducer = (state = '', action) => {
+// REDUCER
+export default function(state = '', action) {
     switch (action.type) {
-        case SHOW_MESSAGE:
+        case MESSAGE_SHOW:
             return action.payload
-        case GOT_TODOS:
+        case ADD_TODO:
+            return ''
+        case LOAD_TODOS:
+            return ''
+        case TODO_REPLACE:
+            return ''
+        case TODO_DELETE:
             return ''
         default:
-            return ''
+            return state
     }
 }
-
-export default reducer
